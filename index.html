@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Fieldwork Website</title>
+
+    <!-- Leaflet CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Map container -->
+    <div id="map" style="height: 400px;"></div>
+
+    <!-- Script to initialize the map -->
+    <script>
+        // Set the initial coordinates and zoom level
+        var initialCoords = [37.7749, -122.4194]; // Example coordinates for San Francisco
+        var initialZoom = 12;
+
+        // Initialize the map
+        var map = L.map('map').setView(initialCoords, initialZoom);
+
+        // Add the OpenStreetMap layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+    </script>
+</body>
+</html>
